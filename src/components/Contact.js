@@ -45,8 +45,13 @@ const Contact = () => {
   };
 
   const handleSubmit = (event) => {
-    setSuccessMsg(true);
     event.preventDefault();
+
+    for (var key in contactData) {
+      if (contactData[key]) {
+        setSuccessMsg(true);
+      } else setSuccessMsg(false);
+    }
   };
 
   return (
